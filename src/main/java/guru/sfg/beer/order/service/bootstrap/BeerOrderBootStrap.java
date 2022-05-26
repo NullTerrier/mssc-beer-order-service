@@ -5,6 +5,8 @@ import guru.sfg.beer.order.service.repositories.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
@@ -14,7 +16,8 @@ import java.util.UUID;
 
 @Slf4j
 @RequiredArgsConstructor
-//@Component
+@Profile("localmysql")
+@Component
 public class BeerOrderBootStrap implements CommandLineRunner {
     public static final String TASTING_ROOM = "Tasting Room";
     public static final String BEER_1_UPC = "1234567890";
